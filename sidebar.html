@@ -3,60 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Sidebar</title>
     <style>
-        .body{
-            margin:0%;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        .parent{
+        .parent {
             display: flex;
         }
-        .side{
+        .side {
             width: 250px;
             background-color: lightsalmon;
             min-height: 100vh;
+            padding: 20px 10px;
+            box-sizing: border-box;
         }
-        .sidebar-box{
-            border: 1px solid transparent;
-            margin:15px 10px ;
-            background-color: transparent;
-            display:inline-block;
-            height:70px;
-            width: 150px;
-            display: flex;
-            align-items: center;
-        }
-        .sidebar-img{
-            height: 50px;
-            border: 12px solid  transparent;
-        }
-        
-        .profile{
+        .profile {
             border-radius: 50%;
             height: 100px;
-            position: relative;
-            top: 10px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .side p {
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .sidebar-box {
+            border: 1px solid transparent;
+            margin: 10px 0;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            height: 70px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar-text {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .side {
+                width: 200px;
+            }
+            .sidebar-box {
+                height: 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            .parent {
+                flex-direction: column;
+            }
+            .side {
+                width: 100%;
+                min-height: auto;
+                padding: 10px;
+            }
+            .profile {
+                height: 80px;
+            }
+            .sidebar-box {
+                justify-content: center;
+            }
         }
     </style>
-</head> 
-<body class="body">
+</head>
+<body>
     <div class="parent">
         <div class="side">
-            <img src="images.jpg" class="profile">
-            <b>
-                <p> &nbsp;&nbsp;&nbsp;It_mayuri_00</p>
-            </b>
+            <img src="images.jpg" class="profile" alt="Profile Picture">
+            <p>It_mayuri_00</p>
             <a href="Edit Profile.html" class="sidebar-box">
-                <span class="sidebar-text"><b>⦿ Edit Profile</b></span>
+                <span class="sidebar-text">⦿ Edit Profile</span>
             </a>
             <a href="followers.jpg" class="sidebar-box">
-                <span class="sidebar-text"><b>⦿ Follow Request</b></span>
+                <span class="sidebar-text">⦿ Follow Request</span>
             </a>
-            <a href="notificatios.html" class="sidebar-box">
-                <span class="sidebar-text"><b>⦿ Notifications</b></span>
+            <a href="notifications.html" class="sidebar-box">
+                <span class="sidebar-text">⦿ Notifications</span>
             </a>
             <a href="followers.html" class="sidebar-box">
-                <span class="sidebar-text"><b>⦿ Followers</b></span>
+                <span class="sidebar-text">⦿ Followers</span>
             </a>
         </div>
     </div>
